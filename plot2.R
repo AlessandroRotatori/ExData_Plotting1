@@ -7,8 +7,8 @@ DPC$DateTime <- strptime(x = paste(as.character(DPC$Date), DPC$Time), format = "
 rm(DPCt)
 
 #png(...) and dev.off() required to export in .png format the plot.
-#If an export of the image is required, delete # from respective rows
+#If an export of the image is not required, please put an "#" in respective rows
 
-#png(filename = "plot2.png", width = 480, height = 480)
+png(filename = "plot2.png", width = 480, height = 480)
 with(data = DPC, expr = plot(x = DPC$DateTime, y = Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
-#dev.off()
+dev.off()

@@ -7,11 +7,11 @@ DPC$DateTime <- strptime(x = paste(as.character(DPC$Date), DPC$Time), format = "
 rm(DPCt)
 
 #png(...) and dev.off() required to export in .png format the plot.
-#If an export of the image is required, delete # from respective rows
+#If an export of the image is not required, please put an "#" in respective rows
 
-#png(filename = "plot3.png", width = 480, height = 480)
+png(filename = "plot3.png", width = 480, height = 480)
 with(data = DPC, expr = plot(x = DateTime, y = Sub_metering_1, type="l"), col="blac")
 with(data = DPC, lines(x = DateTime, y = Sub_metering_2, col="red"))
 with(data = DPC, lines(x = DateTime, y = Sub_metering_3, col="blue"))
 legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-#dev.off()
+dev.off()

@@ -6,9 +6,9 @@ DPC <- DPCt[DPCt$Date=="2007-02-01" | DPCt$Date=="2007-02-02", ]
 DPC$DateTime <- strptime(x = paste(as.character(DPC$Date), DPC$Time), format = "%Y-%m-%d %H:%M:%S")
 rm(DPCt)
 #png(...) and dev.off() required to export in .png format the plot.
-#If an export of the image is required, delete # from respective rows
+#If an export of the image is not required, please put an "#" in respective rows
 
-#png(filename = "plot4.png", width = 480, height = 480)
+png(filename = "plot4.png", width = 480, height = 480)
 
 par(mfcol = c(2, 2))
 
@@ -26,4 +26,4 @@ with(data = DPC, expr = plot(x = DateTime, y = Voltage, xlab = "datetime", ylab 
 
 #Plotting graph bottom/right
 with(data = DPC, expr = plot(x = DateTime, y = Global_reactive_power, type="l", lty=1, xlab="datetime"))
-#dev.off()
+dev.off()
